@@ -6,13 +6,13 @@ char cmd;
 void setup()
 {
   serialBT.begin("Esp32-BT");
-  pinMode(18, OUTPUT);
+  pinMode(18, OUTPUT); //set to pin that you are using
 }
 
 void loop()
 {
   if(serialBT.available()){
-    cmd = serialBT.read();
+    cmd = serialBT.read(); //you may change to any desired value
   }
   if(cmd == '1'){
     serialBT.print("Hello There!");
@@ -21,4 +21,4 @@ void loop()
     serialBT.print("Goodbye!");
   }
   delay(20);
-}
+} //the value will trigger the esp32 and prints the text depending on each statements
